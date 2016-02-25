@@ -33,13 +33,13 @@ public class ImagesAdapterImpl extends RecyclerView.Adapter<ImagesURLsDataHolder
 
     @Override
     public int getItemCount() {
-        if ((cats != null) &&
-                (cats.getResponse() != null) &&
-                (cats.getResponse().getData() != null) &&
-                (cats.getResponse().getData().getImages()!= null) &&
-                (cats.getResponse().getData().getImages().getImage() != null)) {
-            return cats.getResponse().getData().getImages().getImage().length;
-        }
+//        if ((cats != null) &&
+//                (cats.getResponse() != null) &&
+//                (cats.getResponse().getData() != null) &&
+//                (cats.getResponse().getData().getImages()!= null) &&
+//                (cats.getResponse().getData().getImages().getImage() != null)) {
+//            return cats.getResponse().getData().getImages().getImage().length;
+//        }
 
         return 0;
     }

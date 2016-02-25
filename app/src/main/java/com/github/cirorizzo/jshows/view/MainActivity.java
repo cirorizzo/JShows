@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements MainActivityInter
 
         initRecyclerView();
         connectingToMasterPresenter();
-        //getURLs();
+        getURLs();
     }
 
     private void injectObjects() {

@@ -6,7 +6,7 @@ import org.simpleframework.xml.Root;
 @Root(name = "images")
 public class Images {
     @ElementList(name = "image")
-    private Image[] image;
+    public Image[] image;
 
     public Image[] getImage () {
         return image;

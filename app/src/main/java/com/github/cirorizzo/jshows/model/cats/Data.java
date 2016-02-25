@@ -1,11 +1,11 @@
 package com.github.cirorizzo.jshows.model.cats;
 
-import org.simpleframework.xml.ElementList;
+import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
 @Root(name = "data")
 public class Data {
-    @ElementList(name = "images")
+    @Element(name = "images")
     public Images images;
 
     public Images getImages () {

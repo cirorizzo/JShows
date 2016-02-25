@@ -6,7 +6,7 @@ import org.simpleframework.xml.Root;
 @Root(name = "data")
 public class Data {
     @ElementList(name = "images")
-    private Images images;
+    public Images images;
 
     public Images getImages () {
         return images;

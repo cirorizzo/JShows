@@ -6,7 +6,7 @@ import org.simpleframework.xml.Root;
 @Root(name = "response")
 public class Cats {
     @Element(name = "data")
-    private Data data;
+    public Data data;
 
     public Data getData ()  {
         return data;

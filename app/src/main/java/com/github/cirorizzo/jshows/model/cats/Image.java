@@ -6,11 +6,11 @@ import org.simpleframework.xml.Root;
 @Root(name = "image")
 public class Image {
     @Element(name = "id")
-    private String id;
+    public String id;
     @Element(name = "source_url")
-    private String source_url;
+    public String source_url;
     @Element(name = "url")
-    private String url;
+    public String url;
 
     public String getId () {
         return id;

@@ -1,11 +1,8 @@
 package com.github.cirorizzo.jshows.model.cats;
 
-import org.simpleframework.xml.Element;
-import org.simpleframework.xml.Root;
-
-@Root(name = "response")
+//@Root(name = "response")
 public class Cats {
-    @Element(name = "data")
+//    @Element(name = "data")
     public Data data;
 
     public Data getData ()  {

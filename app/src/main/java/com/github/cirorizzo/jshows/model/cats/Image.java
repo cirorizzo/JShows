@@ -1,15 +1,12 @@
 package com.github.cirorizzo.jshows.model.cats;
 
-import org.simpleframework.xml.Element;
-import org.simpleframework.xml.Root;
-
-@Root(name = "image")
+//@Root(name = "image")
 public class Image {
-    @Element(name = "id")
+//    @Element(name = "id")
     public String id;
-    @Element(name = "source_url")
+//    @Element(name = "source_url")
     public String source_url;
-    @Element(name = "url")
+//    @Element(name = "url")
     public String url;
 
     public String getId () {

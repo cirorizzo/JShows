@@ -19,6 +19,7 @@ public class MasterPresenterImpl implements MasterPresenter {
 
     @Override
     public void getMasterRequest() {
+
         imagesAdapter.setObservable(getObservableMasterRequest(new CatAPINetwork()));
     }
 

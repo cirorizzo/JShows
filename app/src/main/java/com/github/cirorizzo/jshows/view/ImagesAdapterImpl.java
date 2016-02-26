@@ -24,8 +24,8 @@ public class ImagesAdapterImpl extends RecyclerView.Adapter<ImagesURLsDataHolder
     @Override
     public void onBindViewHolder(ImagesURLsDataHolder holder, int position) {
         String strURL = "";
-        if (cats.getData().getImages().getImage()[position].getUrl() != null) {
-            strURL = cats.getData().getImages().getImage()[position].getUrl();
+        if (cats.getData().getImages().get(position).getUrl() != null) {
+            strURL = cats.getData().getImages().get(position).getUrl();
         }
 
         holder.bindImages(strURL);
@@ -33,12 +33,11 @@ public class ImagesAdapterImpl extends RecyclerView.Adapter<ImagesURLsDataHolder
 
     @Override
     public int getItemCount() {
-//        if ((cats != null) &&
-//                (cats.getData() != null) &&
-//                (cats.getData().getImages()!= null) &&
-//                (cats.getData().getImages().getImage() != null)) {
-//            return cats.getData().getImages().getImage().length;
-//        }
+        if ((cats != null) &&
+                (cats.getData() != null) &&
+                (cats.getData().getImages()!= null)) {
+            return cats.getData().getImages().size();
+        }
 
         return 0;
     }

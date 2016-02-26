@@ -1,20 +1,23 @@
 package com.github.cirorizzo.jshows.model.cats;
 
-//@Root(name = "image")
+import org.simpleframework.xml.Element;
+import org.simpleframework.xml.Root;
+
+@Root(name = "image")
 public class Image {
-//    @Element(name = "id")
-    public String id;
-//    @Element(name = "source_url")
-    public String source_url;
-//    @Element(name = "url")
-    public String url;
+    @Element(name = "url", required = true)
+    private String url;
+    @Element(name = "id", required = false)
+    private String id;
+    @Element(name = "source_url", required = false)
+    private String source_url;
 
     public String getId () {
         return id;
     }
 
     public void setId (String id) {
-        this.id = id;
+        this.id = this.id;
     }
 
     public String getSource_url () {
@@ -35,6 +38,8 @@ public class Image {
 
     @Override
     public String toString() {
-        return "ClassPojo [id = "+id+", source_url = "+source_url+", url = "+url+"]";
+        return "ClassPojo [id = "+ id +", source_url = "+source_url+", url = "+url+"]";
     }
+
+    public Image() {}
 }

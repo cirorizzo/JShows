@@ -27,6 +27,12 @@ public class MainActivity extends AppCompatActivity implements MainActivityInter
         getURLs();
     }
 
+    @Override
+    protected void onDestroy() {
+        imagesAdapterImpl.unsubscribe();
+        super.onDestroy();
+    }
+
     private void injectObjects() {
         // Dependency Injection
         masterPresenterImpl = ((JShowsApplication) getApplication()).createMasterPresenterInject().provideMasterPresenterImpl();

@@ -5,4 +5,5 @@ import rx.Observable;
 
 public interface ImagesAdapter {
     void setObservable(Observable<Cats> observableCats);
+    void unsubscribe();
 }

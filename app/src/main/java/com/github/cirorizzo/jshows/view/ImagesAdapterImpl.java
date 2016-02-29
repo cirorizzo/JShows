@@ -14,6 +14,7 @@ import rx.Subscriber;
 public class ImagesAdapterImpl extends RecyclerView.Adapter<ImagesURLsDataHolder> implements ImagesAdapter {
     private final String TAG = ImagesAdapterImpl.class.getSimpleName();
     private Cats cats;
+    private Subscriber<Cats> subscriber;
 
     @Override
     public ImagesURLsDataHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -48,7 +49,24 @@ public class ImagesAdapterImpl extends RecyclerView.Adapter<ImagesURLsDataHolder
 
     @Override
     public void setObservable(Observable<Cats> observableCats) {
-        observableCats.subscribe(new Subscriber<Cats>() {
+        if (subscriber == null) {
+            subscriber = getSubscriber();
+        }
+
+        if (subscriber.isUnsubscribed()) {
+            observableCats.subscribe(subscriber);
+        }
+    }
+
+    @Override
+    public void unsubscribe() {
+        if (!subscriber.isUnsubscribed()) {
+            subscriber.unsubscribe();
+        }
+    }
+
+    private Subscriber<Cats> getSubscriber() {
+        Subscriber<Cats> subscriber = new Subscriber<Cats>() {
             @Override
             public void onCompleted() {
                 Log.d(TAG, "onCompleted");
@@ -65,6 +83,8 @@ public class ImagesAdapterImpl extends RecyclerView.Adapter<ImagesURLsDataHolder
                 //TODO : Handle error here
                 Log.d(TAG, "" + e.getMessage());
             }
-        });
+        };
+
+        return subscriber;
     }
 }

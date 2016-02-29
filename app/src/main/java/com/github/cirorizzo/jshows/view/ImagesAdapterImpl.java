@@ -53,9 +53,7 @@ public class ImagesAdapterImpl extends RecyclerView.Adapter<ImagesURLsDataHolder
             subscriber = getSubscriber();
         }
 
-        if (subscriber.isUnsubscribed()) {
-            observableCats.subscribe(subscriber);
-        }
+        observableCats.subscribe(subscriber);
     }
 
     @Override
